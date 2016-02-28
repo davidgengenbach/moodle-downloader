@@ -5,10 +5,10 @@
 
 (function() {
     'use strict';
+    /* globals jQuery, clear, copy */
 
-    // http only cookie for authentification
     var COOKIE = document.cookie;
-    var CURL = "curl '%LINK%' -O -J -L -H 'Cookie: %COOKIE%'".replace('%COOKIE%', COOKIE);
+    var DOWNLOAD_CMD = "wget '%LINK%' --content-disposition --adjust-extension --header 'Cookie: %COOKIE%'".replace('%COOKIE%', COOKIE);
 
     var WHITE_LIST = 'pdf Exercise Teil Präsentation Tutor Uebung Zusatz Übung Lösung Vorlesung Aufzeichnung Multiplizierer Klausur Tutorial History supplementary video pdfs interfaces'.toLowerCase().split(' '),
         BLACK_LIST = 'Forum Gruppe Sprechstunden'.toLowerCase().split(' ');
@@ -47,20 +47,20 @@
             .map(function(index, item) {
                 var downloadLink = jQuery(item).attr('href');
                 console.info("DOWLOADING", downloadLink);
-                return CURL.replace('%LINK%', downloadLink);
+                return DOWNLOAD_CMD.replace('%LINK%', downloadLink);
             })
             .toArray();
 
         try {
             copy(links.join(';'));
             console.log('Copied to your clipboard');
-        } catch(e) {
+        } catch (e) {
             console.error('Your dev tools doesn\'t have the copy function');
         }
-    };
+    }
 
     function loadScript(url, callback) {
-        var script = document.createElement("script")
+        var script = document.createElement("script");
         script.type = "text/javascript";
         script.onload = callback;
         script.src = url;
