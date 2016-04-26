@@ -16,7 +16,7 @@
     init();
 
     function init() {
-        if (typeof jQuery === 'undefined') {
+        if (typeof jQuery === 'undefined' || typeof jQuery !== 'function') {
             loadScript('https://code.jquery.com/jquery.js', getLinks);
         } else {
             getLinks();
@@ -40,7 +40,6 @@
     }
 
     function getLinks() {
-        clear();
         var links = jQuery('body .instancename')
             .filter(filter)
             .closest('a')
