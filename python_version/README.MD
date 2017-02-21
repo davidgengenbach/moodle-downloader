@@ -6,6 +6,7 @@ Caveats:
 It does filter the assets by their type. Currently the only types that get downloaded are
 - `pdf`
 - `archive`
+
 Other types can be added pretty easy by changing `ICON_WHITELIST` in the `filter_element` function in the `crawl.py`. You have to get the icon name to add to this list on the moodle site.
 
 ## Instructions
