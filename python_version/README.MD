@@ -13,9 +13,14 @@ Downloading folders is currently not implemented.
 
 ## Instructions
 
-Download this repo, go into the `python_version` folder in it and execute these commands:
+Execute these commands:
 
 ```bash
+# Or download the repo manually
+git clone git@github.com:davidgengenbach/moodle-downloader.git
+
+cd moodle-downloader/python_version
+
 # Only once
 pip3 install -r requirements.txt
 
