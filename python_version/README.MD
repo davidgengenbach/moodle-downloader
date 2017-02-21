@@ -13,6 +13,8 @@ Downloading folders is currently not implemented.
 
 ## Instructions
 
+Download this repo, go into the `python_version` folder in it and execute these commands:
+
 ```bash
 # Only once
 pip3 install -r requirements.txt
