@@ -1,1 +1,1 @@
-mechanicalsoup
+mechanicalsoup==0.6.0

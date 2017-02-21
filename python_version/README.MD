@@ -25,7 +25,7 @@ cd moodle-downloader/python_version
 pip3 install -r requirements.txt
 
 # The URL_TO_MOODLE_COURSE something like 'https://moodle.informatik.tu-darmstadt.de/course/view.php?id=155'
-python3 crawl.py URL_TO_MOODLE_COURSE
+python3 crawl.py --url URL_TO_MOODLE_COURSE
 # The downloaded assets will now reside in out/{course_title}
 
 # If you don't want to enter the TUID credentials all the time,
