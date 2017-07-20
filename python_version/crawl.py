@@ -35,7 +35,7 @@ def download_assets(url, username, password, out_folder='out'):
         else:
             print('\tWill not get downloaded: "{}"'.format(link.text))
 
-    print('\n(The following assets with icon-names will not be downloaded: {})\n'.format(', '.join(UNUSED_ICONS)))
+    print('\n(The following assets with icon-names will not be downloaded: "{}")\n'.format(', '.join(set(UNUSED_ICONS))))
 
     folder_name = out_folder + '/' + title
     if not os.path.exists(folder_name):
